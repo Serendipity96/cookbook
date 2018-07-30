@@ -1,0 +1,7 @@
+<view class='container'>
+    <ck-input
+    placeholder='搜你想吃的'
+    inputValue="{{inputValue}}"
+    bind:handleInput="handleInput">
+    </ck-input>
+</view>

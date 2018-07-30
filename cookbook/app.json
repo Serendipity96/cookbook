@@ -1,0 +1,42 @@
+{
+    "pages": [
+        "pages/homepage/index",
+        "pages/classify/index",
+        "pages/collect/index",
+        "components/search/index",
+        "components/tags/index"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "菜谱",
+        "backgroundColor": "#eeeeee",
+        "backgroundTextStyle": "light",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/homepage/index",
+                "text": "首页",
+                "selectedColor": "#000000",
+                "iconPath":"/img/homepage.png",
+                "selectedIconPath":"/img/homepage_selected.png"
+            },
+            {
+                "pagePath": "pages/classify/index",
+                "text": "分类",
+                "selectedColor": "#000000",
+                "iconPath": "/img/classify.png",
+                "selectedIconPath": "/img/classify_selected.png"
+            },
+            {
+                "pagePath": "pages/collect/index",
+                "text": "收藏",
+                "selectedColor": "#000000",
+                "iconPath": "/img/collect.png",
+                "selectedIconPath": "/img/collect_selected.png"
+            }
+        ]
+    }
+}
