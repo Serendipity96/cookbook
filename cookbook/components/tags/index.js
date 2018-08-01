@@ -1,1 +1,8 @@
-Component({});
+Component({
+    properties: {
+        List: {
+            type: Array,
+            value: [],
+        },
+    },
+});

@@ -1,0 +1,72 @@
+.container {
+    width: 750rpx;
+}
+
+.container:nth-child(1) {
+    color: #a5d6a7;
+}
+
+.container:nth-child(2) {
+    color: #ff5252;
+}
+
+.container:nth-child(3) {
+    color: #64b5f6;
+}
+
+.container:nth-child(4) {
+    color: #ffb74d;
+}
+
+.container:nth-child(5) {
+    color: #9575cd;
+}
+
+.container .title-wrapper {
+    text-align: center;
+    margin: 40rpx;
+}
+
+.container .title {
+    color: #000;
+    font-size: 38rpx;
+}
+
+.container .tag-wrapper {
+    margin: 30rpx 80rpx;
+}
+
+.container .tag-item-wrapper {
+    display: inline-block;
+    margin: 20rpx 0 20rpx 18rpx;
+}
+
+.container .tag-item {
+    padding: 10rpx 25rpx;
+    font-size: 32rpx;
+}
+
+.container:nth-child(1)>.tag-wrapper>.tag-item-wrapper>.tag-item {
+    border: 1rpx solid #a5d6a7;
+    border-radius: 40rpx;
+}
+
+.container:nth-child(2)>.tag-wrapper>.tag-item-wrapper>.tag-item {
+    border: 1rpx solid #ff5252;
+    border-radius: 40rpx;
+}
+
+.container:nth-child(3)>.tag-wrapper>.tag-item-wrapper>.tag-item {
+    border: 1rpx solid #64b5f6;
+    border-radius: 40rpx;
+}
+
+.container:nth-child(4)>.tag-wrapper>.tag-item-wrapper>.tag-item {
+    border: 1rpx solid #ffb74d;
+    border-radius: 40rpx;
+}
+
+.container:nth-child(5)>.tag-wrapper>.tag-item-wrapper>.tag-item {
+    border: 1rpx solid #9575cd;
+    border-radius: 40rpx;
+}

@@ -1,0 +1,10 @@
+<view wx:for="{{List}}" wx:key="index" class="container">
+    <view class='title-wrapper'>
+        <text class='title'>{{item.name}}</text>
+    </view>
+    <view class='tag-wrapper'>
+        <view wx:for="{{item.list}}" wx:key="index" class='tag-item-wrapper'>
+            <text class='tag-item'>{{item.name}}</text>
+        </view>
+    </view>
+</view>

@@ -1,7 +1,13 @@
 <view class='container'>
     <view class='input-wrapper'>
         <image class='search-icon' src='/img/search.png'></image>
-        <input placeholder='{{placeholder}}' value='{{inputValue}}' bindinput='handleInput' bindconfirm='handleSearch' bindfocus='inputFocused'></input>
+        <input 
+        placeholder='{{placeholder}}' 
+        value='{{inputValue}}' 
+        bindinput='handleInput' 
+        bindconfirm='handleSearch'
+        bindfocus='inputFocused'>
+        </input>
         <view class='close-icon-wrapper' wx:if="{{showCloseIcon}}" bindtap='clearValue'>
         <image class='close-icon' src='/img/close.png' ></image>
         </view>

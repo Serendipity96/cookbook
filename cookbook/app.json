@@ -3,8 +3,14 @@
         "pages/homepage/index",
         "pages/classify/index",
         "pages/collect/index",
+        "pages/search/index",
+        "pages/detail/index",
+
         "components/search/index",
-        "components/tags/index"
+        "components/tags/index",
+        "components/card/index",
+        "components/detail/index",
+        "components/listItem/index"
     ],
     "window": {
         "navigationBarBackgroundColor": "#ffffff",
