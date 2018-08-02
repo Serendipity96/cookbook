@@ -1,0 +1,33 @@
+.container {
+    position: relative;
+    height: 210rpx;
+    margin: 30rpx 0 0 30rpx;
+}
+
+.container image {
+    width: 280rpx;
+    height: 210rpx;
+}
+
+.container .title {
+    position: absolute;
+    top: 0rpx;
+    left: 310rpx;
+    font-size: 36rpx;
+}
+
+.container .tag1 {
+    position: absolute;
+    bottom: 0rpx;
+    left: 310rpx;
+    font-size: 20rpx;
+    color: #9e9e9e;
+}
+
+.container .tag2 {
+    position: absolute;
+    bottom: 0rpx;
+    left: 400rpx;
+    font-size: 20rpx;
+    color: #9e9e9e;
+}

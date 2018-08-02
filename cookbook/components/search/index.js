@@ -37,7 +37,9 @@ Component({
             this.setData({
                 showCloseIcon: false,
             });
-            console.log('handleSearch', this.data.inputValue);
+            wx.navigateTo({
+                url: `/pages/list/index?menuStr=${this.data.inputValue}`,
+            });
         },
         clearValue() {
             this.triggerEvent('handleInput', {
@@ -51,7 +53,9 @@ Component({
             this.setData({
                 showCloseIcon: false,
             });
-            console.log('onTap', this.data.inputValue);
+            wx.navigateTo({
+                url: `/pages/list/index?menuStr=${this.data.inputValue}`,
+            });
         },
     }
 });

@@ -1,2 +1,1 @@
-<ck-tags List="{{tagList}}">
-</ck-tags>
+<ck-tags List="{{tagList}}"></ck-tags>

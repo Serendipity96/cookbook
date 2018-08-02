@@ -3,7 +3,7 @@
         "pages/homepage/index",
         "pages/classify/index",
         "pages/collect/index",
-        "pages/search/index",
+        "pages/list/index",
         "pages/detail/index",
 
         "components/search/index",
