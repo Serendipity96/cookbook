@@ -57,7 +57,6 @@ Page({
                 wx.hideNavigationBarLoading()
             }
         });
-
     },
 
 
