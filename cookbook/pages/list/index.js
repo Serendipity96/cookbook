@@ -25,8 +25,8 @@ Page({
     handleRequest() {
         wx.showNavigationBarLoading()
         let self = this;
-        const rn = 10;
-        const albums = 1;
+        const rn = 10; // 一次请求返回条数
+        const albums = 1; // 封面图片，默认是1
         let pn = self.data.pageNumber;
         wx.request({
             url: menuURL + 'key=' + appKey + '&menu=' + self.data.menuStr + '&rn=' + rn + '&pn=' + pn * rn + '&albums=' + albums,
@@ -36,7 +36,7 @@ Page({
             success: function(res) {
                 let oldList = self.data.menuList;
                 let data = res.data.result.data;
-                pn += 1;
+                pn += 1; 
                 if (oldList.length == 0) {
                     for (let i = 0; i < 10; i++) {
                         data[i].tags = data[i].tags.split(";", 4).slice(1, 3);
@@ -46,12 +46,11 @@ Page({
                         pageNumber: pn,
                     })
                 } else {
-                    let dataList = data;
                     for (let i = 0; i < 10; i++) {
-                        dataList[i].tags = dataList[i].tags.split(";", 4).slice(1, 3);
+                        data[i].tags = data[i].tags.split(";", 4).slice(1, 3);
                     }
                     self.setData({
-                        menuList: oldList.concat(dataList),
+                        menuList: oldList.concat(data),
                         pageNumber: pn,
                     })
                 }
