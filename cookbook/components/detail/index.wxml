@@ -1,0 +1,23 @@
+<view class="container">
+    <image src='{{detail.albums}}' mode='aspectFill'></image>
+    <view class='title-wrapper'>
+        <view class='title'>{{detail.title}}</view>
+            <text class="tags" wx:for="{{tags}}" wx:key="index">{{item}}</text>
+        </view>
+        <view class='little-title'>- 食材清单 -</view>
+        <view class='list-wrapper'>
+        <view class='list' wx:for="{{ingredients}}" wx:key="index">
+            <text>{{item.name}}</text>
+            <text>{{item.value}}</text>
+        </view>
+        <view class="list" wx:for="{{burden}}" wx:key="index">
+            <text>{{item.name}}</text>
+            <text>{{item.value}}</text>
+        </view>
+        </view>
+        <view class='little-title'>- 烹饪步骤 -</view>
+        <view  wx:for="{{detail.steps}}" wx:key="index">
+            <image class="step-img" src='{{item.img}}' mode='aspectFit'></image>
+            <view class='step-wrapper'><view class='step'>{{item.step}}</view></view>
+        </view>
+    </view>

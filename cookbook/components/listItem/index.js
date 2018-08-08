@@ -1,8 +1,8 @@
 Component({
     properties:{
-        List:{
-            type:Array,
+        item:{
+            type:Object,
             value:[]
         }
-    }
+    },
 });

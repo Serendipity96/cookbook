@@ -1,4 +1,4 @@
-<view wx:for="{{List}}" wx:key="index" class='container'>
+<view class='container'>
     <image src='{{item.albums}}' mode='aspectFill'></image>
     <view class='title'>{{item.title}}</view>
     <view class='tag1'>{{item.tags[0]}}</view>

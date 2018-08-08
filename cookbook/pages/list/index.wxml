@@ -1,1 +1,3 @@
-<ck-listItem List="{{menuList}}"></ck-listItem>
+<view wx:for="{{menuList}}" wx:key="index" data-id="{{item.id}}" bind:tap="onTap">
+    <ck-listItem item="{{item}}"></ck-listItem>
+</view>

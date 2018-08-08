@@ -1,1 +1,5 @@
-{}
+{
+    "usingComponents": {
+        "ck-detail": "/components/detail/index"
+    }
+}
