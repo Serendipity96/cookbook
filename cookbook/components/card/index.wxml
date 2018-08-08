@@ -1,0 +1,4 @@
+<view>
+<image src='{{item.albums}}' mode='aspectFill'></image>
+<view>{{item.name}}</view>
+</view>

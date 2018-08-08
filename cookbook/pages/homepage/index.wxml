@@ -4,4 +4,8 @@
     inputValue="{{inputValue}}"
     bind:handleInput="handleInput">
     </ck-input>
+    <view>今日推荐</view>
+    <view wx:for="{{cardList}}" wx:key="index" bindtap='toDetail' data-id='{{item.id}}' data-name='{{item.name}}'>
+    <ck-card item="{{item}}"></ck-card>
+    </view>
 </view>
