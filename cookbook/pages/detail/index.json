@@ -1,5 +1,6 @@
 {
     "usingComponents": {
-        "ck-detail": "/components/detail/index"
+        "ck-detail": "/components/detail/index",
+        "ck-listItem": "/components/listItem/index"
     }
 }

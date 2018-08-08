@@ -1,5 +1,6 @@
 var appKey = require('../../config.js');
 const detailURL = 'https://apis.juhe.cn/cook/queryid?';
+const menuURL = 'https://apis.juhe.cn/cook/query?';
 
 Page({
 
@@ -7,8 +8,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        id: 0,
-        detail:{}
+        detail: {},
+        menuList: [],
+        pageNumber: 3,
     },
 
     /**
@@ -16,24 +18,68 @@ Page({
      */
     onLoad: function(options) {
         this.setData({
-            id: options.id
+            id: options.id,
+            menuStr: options.menuStr
         })
-        this.handleRequest();
+        this.handleDetail();
+        this.handleRecommend();
     },
-    handleRequest(){
+    handleDetail() {
         let self = this;
         wx.request({
-            url: detailURL+'key='+appKey+'&id='+self.data.id,
-            data:{
-                result:[]
+            url: detailURL + 'key=' + appKey + '&id=' + self.data.id,
+            data: {
+                result: []
             },
-            success:function(res){
+            success: function(res) {
                 self.setData({
                     detail: res.data.result.data[0]
                 })
             }
         })
-        
+    },
+    handleRecommend() {
+        wx.showNavigationBarLoading()
+        let self = this;
+        const rn = 10; // 一次请求返回条数
+        const albums = 1; // 封面图片，默认是1
+        let pn = self.data.pageNumber;
+        wx.request({
+            url: menuURL + 'key=' + appKey + '&menu=' + self.data.menuStr + '&rn=' + rn + '&pn=' + pn * rn + '&albums=' + albums,
+            data: {
+                result: []
+            },
+            success: function(res) {
+                let oldList = self.data.menuList;
+                let data = res.data.result.data;
+                pn += 1;
+                if (oldList.length == 0) {
+                    for (let i = 0; i < 10; i++) {
+                        data[i].tags = data[i].tags.split(";", 4).slice(1, 3);
+                    }
+                    self.setData({
+                        menuList: data,
+                        pageNumber: pn,
+                    })
+                } else {
+                    for (let i = 0; i < 10; i++) {
+                        data[i].tags = data[i].tags.split(";", 4).slice(1, 3);
+                    }
+                    self.setData({
+                        menuList: oldList.concat(data),
+                        pageNumber: pn,
+                    })
+                }
+                wx.hideNavigationBarLoading()
+            }
+        });
+
+    },
+    onTap(e) {
+        let self = this;
+        wx.navigateTo({
+            url: `/pages/detail/index?id=${e.currentTarget.dataset.id}&menuStr=${self.data.menuStr}`,
+        });
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -74,7 +120,7 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function() {
-
+        this.handleRecommend();
     },
 
     /**

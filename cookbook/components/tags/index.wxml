@@ -3,7 +3,7 @@
         <text class='title'>{{item.name}}</text>
     </view>
     <view class='tag-wrapper'>
-        <view wx:for="{{item.list}}" wx:key="index" class='tag-item-wrapper'>
+        <view wx:for="{{item.list}}" wx:key="index" class='tag-item-wrapper' data-name="{{item.name}}" bindtap='onTap'>
             <text class='tag-item'>{{item.name}}</text>
         </view>
     </view>

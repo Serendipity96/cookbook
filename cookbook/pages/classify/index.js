@@ -27,7 +27,7 @@ Page({
             },
             success: function (res) {
                 const tempList = []
-                const ids = [0, 2, 4, 8, 11];
+                const ids = [16, 2, 8, 11,13];
                 ids.map(i => tempList.push(res.data.result[i]));
                 self.setData({
                     tagList: tempList

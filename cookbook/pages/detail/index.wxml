@@ -1,1 +1,5 @@
 <ck-detail detail="{{detail}}"></ck-detail>
+<view class='title-wrapper'><view>- 相关推荐 -</view></view>
+<view wx:for="{{menuList}}" wx:key="index" data-id="{{item.id}}" bind:tap="onTap">
+    <ck-listItem item="{{item}}"></ck-listItem>
+</view>

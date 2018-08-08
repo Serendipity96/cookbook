@@ -59,12 +59,17 @@ Page({
         });
     },
     onTap(e){
+        let self = this;
         wx.navigateTo({
-            url: `/pages/detail/index?id=${e.currentTarget.dataset.id}`,
+            url: `/pages/detail/index?id=${e.currentTarget.dataset.id}&menuStr=${self.data.menuStr}`,
         });
         
     },
-
+    handleInput(e) {
+        this.setData({
+            inputValue: e.detail.value,
+        });
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

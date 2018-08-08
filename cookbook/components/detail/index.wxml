@@ -17,7 +17,7 @@
         </view>
         <view class='little-title'>- 烹饪步骤 -</view>
         <view  wx:for="{{detail.steps}}" wx:key="index">
-            <image class="step-img" src='{{item.img}}' mode='aspectFit'></image>
+            <image class="step-img" src='{{item.img}}' mode='aspectFill'></image>
             <view class='step-wrapper'><view class='step'>{{item.step}}</view></view>
         </view>
     </view>

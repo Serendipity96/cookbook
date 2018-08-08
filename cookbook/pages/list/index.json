@@ -1,5 +1,6 @@
 {
     "usingComponents": {
-        "ck-listItem": "/components/listItem/index"
+        "ck-listItem": "/components/listItem/index",
+        "ck-input": "/components/search/index"
     }
 }
