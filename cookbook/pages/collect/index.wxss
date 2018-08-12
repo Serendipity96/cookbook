@@ -1,0 +1,35 @@
+.container {
+    width: 750rpx;
+    height: 1000rpx;
+    position: relative;
+}
+
+.container .userContainer {
+    position: relative;
+    width: 750rpx;
+    height: 140rpx;
+    margin: 20rpx 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.container .userContainer image {
+    margin: 20rpx 30rpx;
+    border-radius: 50%;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.container .userContainer .name {
+    position: absolute;
+    top: 30rpx;
+    left: 160rpx;
+    font-size: 30rpx;
+}
+
+.container .userContainer .count {
+    position: absolute;
+    top: 80rpx;
+    left: 160rpx;
+    font-size: 24rpx;
+}

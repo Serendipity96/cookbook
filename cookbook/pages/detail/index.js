@@ -10,7 +10,7 @@ Page({
     data: {
         detail: {},
         menuList: [],
-        pageNumber: 3,
+        pageNumber: 0,
     },
 
     /**
@@ -50,9 +50,11 @@ Page({
                 result: []
             },
             success: function(res) {
+                console.log(res.data.result)
                 let oldList = self.data.menuList;
                 let data = res.data.result.data;
                 pn += 1;
+                
                 if (oldList.length == 0) {
                     for (let i = 0; i < 10; i++) {
                         data[i].tags = data[i].tags.split(";", 4).slice(1, 3);

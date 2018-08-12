@@ -1,0 +1,6 @@
+.recommend {
+    font-size: 36rpx;
+    margin: 50rpx;
+}
+
+

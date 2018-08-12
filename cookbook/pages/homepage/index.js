@@ -8,7 +8,9 @@ Page({
      */
     data: {
         inputValue: '',
-        cardList: []
+        listOne:[],
+        listTwo:[],
+        listThree:[]
     },
 
     /**
@@ -38,13 +40,11 @@ Page({
         });
     },
     getCardList() {
-        let timeStamp = (new Date()).valueOf();
-        
-        // menuIds = [timeStamp % 79, timeStamp % 131, timeStamp % 258, timeStamp % 169, timeStamp % 44, timeStamp % 523];
-        menuIds = [1,2,3,4,5,6]
-        console.log(menuIds)
+        menuIds = [100, 1013, 23, 1818, 51, 84]
         let self = this;
-        let list = [];
+        let listOne = [];
+        let listTwo = [];
+        let listThree = [];
         for (let i = 0; i < menuIds.length; i++) {
             wx.request({
                 url: detailURL + 'key=' + appKey + '&id=' + menuIds[i],
@@ -54,28 +54,39 @@ Page({
                 success: function(res) {
                     let url = res.data.result.data[0].albums[0];
                     let name = res.data.result.data[0].title;
-                    list.push({
-                        id: menuIds[i],
-                        name: name,
-                        albums: url
-                    })
-                    if (i == menuIds.length - 1) {
+                    if (i < 2) {
+                        listOne.push({
+                            id: menuIds[i],
+                            name: name,
+                            albums: url
+                        })
+                    }
+                    if (i >= 2 && i < 4) {
+                        listTwo.push({
+                            id: menuIds[i],
+                            name: name,
+                            albums: url
+                        })
+                    }
+                    if (i >= 4 && i < 6) {
+                        listThree.push({
+                            id: menuIds[i],
+                            name: name,
+                            albums: url
+                        })
+                    }
+                    if(i == menuIds.length-1){
                         self.setData({
-                            cardList: list
+                            listOne:listOne,
+                            listTwo:listTwo,
+                            listThree:listThree
                         })
                     }
                 }
             })
         }
-
-
     },
-    toDetail(e) {
-        let self = this;
-        wx.navigateTo({
-            url: `/pages/detail/index?id=${e.currentTarget.dataset.id}&menuStr=${e.currentTarget.dataset.name}`,
-        });
-    },
+    
 
     /**
      * 生命周期函数--监听页面隐藏

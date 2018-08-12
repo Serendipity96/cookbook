@@ -1,0 +1,10 @@
+<view class='container'>
+    <view class='userContainer'>
+        <image src='{{avatarUrl}}'></image>
+        <view class='name'>{{nickName}}</view>
+        <view class='count'>收藏数 72</view>
+    </view>
+    <view wx:for="{{menuList}}" wx:key="index" data-id="{{item.id}}" data-name='{{item.title}}' bind:tap="onTap">
+        <ck-listItem item="{{item}}"></ck-listItem>
+    </view>
+</view>

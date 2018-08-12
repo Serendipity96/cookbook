@@ -1,0 +1,16 @@
+.card-container {
+    margin: 50rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-container image {
+    width: 300rpx;
+    height: 180rpx;
+    border-radius: 8rpx;
+}
+
+.card-container .name {
+    width: 300rpx;
+    font-size: 30rpx;
+}

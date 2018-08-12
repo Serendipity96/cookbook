@@ -1,4 +1,6 @@
-<view>
-<image src='{{item.albums}}' mode='aspectFill'></image>
-<view>{{item.name}}</view>
+<view class='card-container'>
+    <view class='card-item'  wx:for="{{cardList}}" wx:key="index" bindtap='toDetail' data-id='{{item.id}}' data-name='{{item.name}}'>
+        <image src='{{item.albums}}' mode='aspectFill'></image>
+        <view class='name'>{{item.name}}</view>
+    </view>
 </view>
